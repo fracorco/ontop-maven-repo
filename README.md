@@ -11,7 +11,7 @@ For third-party artifacts in this repository, we include POM tags `<URL>` and `<
 ## How to import artifacts from this repository
 
 Add the following to the `pom.xml` file of your Maven project:
-```
+```xml
 <repositories>
     <repository>
         <id>ontop-maven-repo</id>
@@ -29,7 +29,7 @@ You need write access to this Git repository and of course the JAR file to deplo
 
 **Create a pom.xml file (if needed)**.
 If not available, e.g., because the JAR does not come from a Maven project, you may create a `pom.xml` file by filling this template:
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -63,14 +63,14 @@ Notes:
 
 **Clone this repository (if not done before)**.
 In a terminal, simply execute:
-```
+```shell
 git clone git@github.com:ontop/ontop-maven-repo.git
 cd ontop-maven-repo
 ```
 
 **Deploy the JAR artifact locally**.
 From the top-level directory of this repository (if elsewhere, replace `./repository` with the appropriate path), execute the following commands filling the `PATH_TO_JAR_FILE` and `PATH_TO_POM_FILE` placeholders:
-```
+```shell
 mvn install:install-file \
     -DcreateChecksum=true \
     -DlocalRepositoryPath=./repository \
@@ -80,7 +80,7 @@ mvn install:install-file \
 
 **Commit and push the local change**.
 Execute the following commands:
-```
+```shell
 git add -A
 git commit
 git push
