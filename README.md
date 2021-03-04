@@ -6,7 +6,7 @@ For third-party artifacts in this repository, we include POM tags `<URL>` and `<
 
 **Usage of third-party artifacts is subject to their respective license terms.** Most of them (e.g., JDBC driver) are only used for the automated testing of Ontop and are in no way part of distributed Ontop bundles (i.e., Ontop users will have to obtain them from their respective web sites, if needed).
 
-**Usage of this repository outside Ontop projects is discouraged**. While publicly accessible (to allow anyone to compile Ontop projects), artifacts in this repository may be *changed* or *deleted* without notice according to Ontop projects needs, breaking third-party use.
+**Usage of this repository outside Ontop projects is discouraged**. While publicly accessible (to allow anyone to run dedicated tests), artifacts in this repository may be *changed* or *deleted* without notice according to Ontop projects needs, breaking third-party use.
 
 ## How to import artifacts from this repository
 
