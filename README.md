@@ -14,8 +14,8 @@ Add the following to the `pom.xml` file of your Maven project:
 ```xml
 <repositories>
     <repository>
-        <id>ontop-maven-repo</id>
-        <url>https://raw.githubusercontent.com/ontop/ontop-maven-repo/master/repository/</url>
+        <id>ontop-3rd-party-maven-repo</id>
+        <url>https://raw.githubusercontent.com/ontop/ontop-3rd-party-maven-repo/master/repository/</url>
     </repository>
 </repositories>
 ```
