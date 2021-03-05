@@ -1,10 +1,10 @@
 # Ontop GitHub-Hosted Maven Repository
 
-This Git repository provides a versioned [Maven repository](https://maven.apache.org/guides/introduction/introduction-to-repositories.html) for publicly-available Maven artifacts (JARs) used in / related to [Ontop](https://github.com/ontop) projects and not available on [Maven central](https://repo.maven.apache.org/maven2/).
+This Git repository provides a versioned [Maven repository](https://maven.apache.org/guides/introduction/introduction-to-repositories.html) for publicly-available third-party Maven artifacts (JARs) used in [Ontop](https://github.com/ontop) projects and not available on [Maven central](https://repo.maven.apache.org/maven2/).
 
 For third-party artifacts in this repository, we include POM tags `<URL>` and `<licenses>` that respectively link to an artifact web page providing further information and download instructions and specify the artifact license (using [SPDX](https://spdx.org/licenses/) identifiers if possible).
 
-**Usage of third-party artifacts is subject to their respective license terms.** Most of them (e.g., JDBC driver) are only used for the automated testing of Ontop and are in no way part of distributed Ontop bundles (i.e., Ontop users will have to obtain them from their respective web sites, if needed).
+**Usage of third-party artifacts is subject to their respective license terms.** Most of them (e.g., JDBC drivers) are only used for the automated testing of Ontop and are in no way part of distributed Ontop bundles (i.e., Ontop users will have to obtain them from their respective web sites, if needed).
 
 **Usage of this repository outside Ontop projects is discouraged**. While publicly accessible (to allow anyone to run dedicated tests), artifacts in this repository may be *changed* or *deleted* without notice according to Ontop projects needs, breaking third-party use.
 
@@ -20,7 +20,7 @@ Add the following to the `pom.xml` file of your Maven project:
 </repositories>
 ```
 
-After that, artifacts can be imported as [regular Maven dependencies](https://maven.apache.org/pom.html#Dependencies). Browse [here](https://github.com/fracorco/third-party-jars/tree/master/repository) to see available artifacts and obtain their maven coordinates (and `pom.xml` files, if needed).
+After that, artifacts can be imported as [regular Maven dependencies](https://maven.apache.org/pom.html#Dependencies). Browse [here](https://github.com/ontop/ontop-3rd-party-maven-repo/tree/master/repository) to see available artifacts and obtain their maven coordinates (and `pom.xml` files, if needed).
 
 ## How to deploy an artifact JAR file to this repository
 
@@ -59,13 +59,13 @@ Notes:
 * placeholders `GROUP_ID`, `ARTIFACT_ID`, `VERSION` are mandatory and must be filled;
 * if possible, placeholders `URL` and `LICENSE_ID` should be filled for third-party artifacts, referring to licensing information provided online or embedded in the JAR file itself (open the JAR file as a ZIP file and look for license files or metadata); this step is important to document artifact origin and license in both human and machine-readable ways;
 * artifact dependencies are optional, but if present and listed here they help users importing this artifact, who will not have to manually list them in their `pom.xml` files, relying instead on Maven transitive dependency inclusion;
-* while Maven can automatically generate a missing `pom.xml` file at deploy time (see `generatePom` option of [maven-deploy-plugin](https://maven.apache.org/plugins/maven-deploy-plugin/deploy-file-mojo.html)), the generated file will not include any URL or license information.
+* while Maven can automatically generate a missing `pom.xml` file at deploy time (see `generatePom` option of [maven-deploy-plugin](https://maven.apache.org/plugins/maven-deploy-plugin/deploy-file-mojo.html)), the generated file will not include any URL, license or dependency information.
 
 **Clone this repository (if not done before)**.
-In a terminal, simply execute:
+In a terminal, execute:
 ```shell
-git clone git@github.com:ontop/ontop-maven-repo.git
-cd ontop-maven-repo
+git clone git@github.com:ontop/ontop-3rd-party-maven-repo.git
+cd ontop-3rd-party-maven-repo
 ```
 
 **Deploy the JAR artifact locally**.
